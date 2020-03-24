@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">IBMtranslator</string>
+    <string name="language_translator_url">https://api.eu-gb.language-translator.watson.cloud.ibm.com/instances/2b87e260-d0d0-4678-80f2-4acef06e3922</string>
+    <string name="language_translator_apikey">8-wzcUpk1sMw_FElhXnqqWEBDkYya_FZPl9iJ80s7juM</string>
+</resources>
