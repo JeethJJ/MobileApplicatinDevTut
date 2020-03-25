@@ -2,30 +2,40 @@ package github.jeethjj.sqlite;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.database.Cursor;
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     DatabaseHelper db;
+    EditText name;
+    EditText address;
+    EditText age;
+    EditText position;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         db = new DatabaseHelper(this);
-        //db.addData("JJ","79",21,"CEO");
-        Cursor data = db.getData();
-        ArrayList<String> listData = new ArrayList<>();
-        int i = 0;
-        while(data.moveToNext()){
-            listData.add(data.getString(1));
-            Log.d("NUMMMMMMMMM", String.valueOf(i));
-            Log.d("DATAAAAAAAA",data.getString(1));
-            i++;
-        }
+
+        Button b = findViewById(R.id.button);
+        b.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                name=findViewById(R.id.editText5);
+                address=findViewById(R.id.editText2);
+                age=findViewById(R.id.editText3);
+                position=findViewById(R.id.editText4);
+                db.addData(String.valueOf(name.getText()),String.valueOf(address.getText()),Integer.parseInt(String.valueOf(age.getText())),String.valueOf(position.getText()));
+                Intent intent = new Intent(MainActivity.this, listElements.class);
+                startActivity(intent);
+            }
+        });
     }
+
 }
