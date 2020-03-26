@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             hours = hours - 12;
             suffix = "pm";
         }
-        new SynthesisTask().execute("Hello babe. Good morning. How is the weather today? The time is " + hours + " " + prefix + minutes + suffix);
+        new SynthesisTask().execute("Good morning. How is quarantine? The time is " + hours + " " + prefix + minutes + suffix);
 
     }
 
