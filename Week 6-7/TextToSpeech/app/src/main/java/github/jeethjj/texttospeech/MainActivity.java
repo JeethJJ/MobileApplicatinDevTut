@@ -43,16 +43,16 @@ public class MainActivity extends AppCompatActivity {
 
     private TextToSpeech initTextToSpeechService() {
         Authenticator authenticator = new IamAuthenticator(getString(R.string.text_speech_apikey));
-        TextToSpeech service = new TextToSpeech(authenticator); service.setServiceUrl(getString(R.string.text_speech_url));
+        TextToSpeech service = new TextToSpeech(authenticator);
+        service.setServiceUrl(getString(R.string.text_speech_url));
         return service;
     }
 
     private class SynthesisTask extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... params) {
-            SynthesizeOptions synthesizeOptions = new SynthesizeOptions.Builder()
-                    .text(params[0]) .voice(SynthesizeOptions.Voice.EN_US_LISAVOICE) .accept(HttpMediaType.AUDIO_WAV).build(); player.playStream(textService.synthesize(synthesizeOptions).execute()
-                    .getResult());
+            SynthesizeOptions synthesizeOptions = new SynthesizeOptions.Builder().text(params[0]) .voice(SynthesizeOptions.Voice.EN_US_LISAVOICE) .accept(HttpMediaType.AUDIO_WAV).build();
+            player.playStream(textService.synthesize(synthesizeOptions).execute().getResult());
             return "Did synthesize";
         }
     }

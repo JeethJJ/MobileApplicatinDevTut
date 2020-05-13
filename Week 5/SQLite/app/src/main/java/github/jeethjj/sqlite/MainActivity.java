@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -17,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
     EditText age;
     EditText position;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +25,16 @@ public class MainActivity extends AppCompatActivity {
         db = new DatabaseHelper(this);
 
         Button b = findViewById(R.id.button);
+
+        TextView tv = findViewById(R.id.textView);
+
+//        Typewriter writer = new Typewriter(this,tv);
+//        setContentView(writer);
+//
+//        //Add a character every 150ms
+//        writer.setCharacterDelay(150);
+//        writer.animateText("Sample String");
+
         b.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 name=findViewById(R.id.editText5);
@@ -36,6 +46,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    private void setText(TextView tv, String st){
+        String text="";
+        for(int i=0; i<st.length();i++){
+            text=text+st.charAt(i);
+            tv.setText(text);
+        }
     }
 
 }
