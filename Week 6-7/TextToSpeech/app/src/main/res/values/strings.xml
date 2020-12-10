@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">TextToSpeech</string>
-    <string name="text_speech_apikey">BWQaXB9XxRkziP8ih5Z8rL2MXaO9SDbXv2nPr5Br7nIQ</string>
+    <string name="text_speech_apikey">{IBM ap key}</string>
     <string name="text_speech_url">https://api.eu-gb.text-to-speech.watson.cloud.ibm.com/instances/b0d06307-679d-41cc-990a-6f2f9dc25db8</string>
     <string name="speak">Speak</string>
 </resources>
